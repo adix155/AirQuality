@@ -1,6 +1,5 @@
 import json
 import requests
-from sys import exit
 
 """
 klasa zawierająca parametry stacji (punktu pomiarowego):
@@ -91,7 +90,7 @@ class getDataFromAPI(object):
         data = response.text
         jsonData = json.loads(data)
 
-        stationId = jsonData[0]['stationId']
+        stationId = id
 
         url2 = 'http://api.gios.gov.pl/pjp-api/rest/aqindex/getIndex/' + str(id)
         response2 = requests.get(url2)
