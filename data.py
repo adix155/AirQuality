@@ -31,7 +31,7 @@ klasa zawierająca właściwości danej stacji (wszystko ściągne jest z API):
     - jeśli dana stacja mierzy daną właściwość - czteroelementowa lista: (print zwróci np. [6065, '2021-01-18 22:00:00', 51.9736, 'Dobry'])
         - id właściwości pomiarowej (tylko do wywołania API)
         - źródłowa data
-        - wartość pomiaru (w µg/m3)
+        - wartość pomiaru (w µg/m3) (często zwraca None)
         - tekstowa ocena danej właściwości powietrza
 """
 
