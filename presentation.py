@@ -104,7 +104,7 @@ class Aplication(object):
                 station_name_label.place(x=60, y=90)
 
                 check_time=tk.StringVar()
-                check_time.set(f"Data pomiaru: {data.indexMain[0][:10]}")
+                check_time.set(f"Data pomiaru: {data.indexMain[0][:16]}")
                 global check_time_label
                 check_time_label = tkinter.Label(self.root, textvariable=check_time, font=("Arial", font_size))
                 check_time_label.pack()
