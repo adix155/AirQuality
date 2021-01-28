@@ -144,6 +144,8 @@ class getDataFromAPI(object):
                     if jsonData['values'][j]['value'] != "null":
                         date = jsonData['values'][j]['date']
                         value = jsonData['values'][j]['value']
+                        if value == None:
+                            value = "?"
                         break
                 if i == 0:
                     indexSO2.append(date)
@@ -205,7 +207,7 @@ class getDataFromAPI(object):
         return stationProperties
 
 
-def testowanie():
+"""def testowanie():
     o = getDataFromAPI()
     lista = o.getStationData()
     for i in lista:
@@ -221,4 +223,4 @@ def testowanie():
         print("\t\t", "O3", p.indexO3)
 
 
-testowanie()
+testowanie()"""
