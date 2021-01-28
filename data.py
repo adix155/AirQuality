@@ -207,20 +207,20 @@ class getDataFromAPI(object):
         return stationProperties
 
 
-"""def testowanie():
-    o = getDataFromAPI()
-    lista = o.getStationData()
-    for i in lista:
-        print("Id =", i.id, "Nazwa =", i.name)
-        p = o.getStationProperties(i.id)
-        print("\t", "Indeks jakości powietrza:", p.indexMain)
-        print("\t\t", "SO2", p.indexSO2)
-        print("\t\t", "NO2", p.indexNO2)
-        print("\t\t", "PM10", p.indexPM10)
-        print("\t\t", "PM25", p.indexPM25)
-        print("\t\t", "CO", p.indexCO)
-        print("\t\t", "C6H6", p.indexC6H6)
-        print("\t\t", "O3", p.indexO3)
-
-
-testowanie()"""
+# def testowanie():
+#     o = getDataFromAPI()
+#     lista = o.getStationData()
+#     for i in lista:
+#         print("Id =", i.id, "Nazwa =", i.name)
+#         p = o.getStationProperties(i.id)
+#         print("\t", "Indeks jakości powietrza:", p.indexMain)
+#         print("\t\t", "SO2", p.indexSO2)
+#         print("\t\t", "NO2", p.indexNO2)
+#         print("\t\t", "PM10", p.indexPM10)
+#         print("\t\t", "PM25", p.indexPM25)
+#         print("\t\t", "CO", p.indexCO)
+#         print("\t\t", "C6H6", p.indexC6H6)
+#         print("\t\t", "O3", p.indexO3)
+#
+#
+# testowanie()
