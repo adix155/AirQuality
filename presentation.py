@@ -11,7 +11,7 @@ class Aplication(object):
         self.root.title("AirQuality")
         self.root.resizable(False, False)
 
-        self.main_label = tk.Label(self.root, text="Wybierz jedną z dostępnych miejscowości,\n"
+        self.main_label = tk.Label(self.root, text="Wybierz jedną z dostępnych stacji,\n"
                                                    " w której chcesz sprawdzić jakość powietrza ", \
                                    font=('Arial', 15))
         self.main_label.pack(side=tk.TOP)
@@ -117,80 +117,80 @@ class Aplication(object):
             #SO2
                 air_q_SO2 = tk.StringVar()
                 if len(data.indexSO2)==4:
-                    info = f"PoziomSO2: {data.indexSO2[2]} µg/m3 Ocena tekstowa: {data.indexSO2[3]}"
+                    info = f"PoziomSO2: {data.indexSO2[2]} µg/m3 Ocena tekstowa: {data.indexSO2[3]} Godzina: {data.indexSO2[1][12:16]}"
                 else:
                     info="PoziomSO2: Ta stacja nie mierzy tej właściwości!"
                 air_q_SO2.set(info)
                 global air_q_SO2_label
                 air_q_SO2_label = tkinter.Label(self.root, textvariable=air_q_SO2, font=("Arial", font_size))
                 air_q_SO2_label.pack()
-                air_q_SO2_label.place(x=60, y=150)
+                air_q_SO2_label.place(x=30, y=170)
             #NO2
                 air_q_NO2 = tk.StringVar()
                 if len(data.indexNO2)==4:
-                    info=f"PoziomNO2: {data.indexNO2[2]} µg/m3 Ocena tekstowa: {data.indexNO2[3]}"
+                    info=f"PoziomNO2: {data.indexNO2[2]} µg/m3 Ocena tekstowa: {data.indexNO2[3]} Godzina: {data.indexNO2[1][12:16]}"
                 else:
                     info="PoziomNO2: Ta stacja nie mierzy tej właściwości!"
                 air_q_NO2.set(info)
                 global air_q_NO2_label
                 air_q_NO2_label = tkinter.Label(self.root, textvariable=air_q_NO2, font=("Arial", font_size))
                 air_q_NO2_label.pack()
-                air_q_NO2_label.place(x=60, y=170)
+                air_q_NO2_label.place(x=30, y=190)
             #PM10
                 air_q_PM10 = tk.StringVar()
                 if len(data.indexPM10) == 4:
-                    info = f"PoziomPM10: {data.indexPM10[2]} µg/m3 Ocena tekstowa: {data.indexPM10[3]}"
+                    info = f"PoziomPM10: {data.indexPM10[2]} µg/m3 Ocena tekstowa: {data.indexPM10[3]} Godzina: {data.indexPM10[1][12:16]}"
                 else:
                     info = "PoziomPM10: Ta stacja nie mierzy tej właściwości!"
                 air_q_PM10.set(info)
                 global air_q_PM10_label
                 air_q_PM10_label = tkinter.Label(self.root, textvariable=air_q_PM10, font=("Arial", font_size))
                 air_q_PM10_label.pack()
-                air_q_PM10_label.place(x=60, y=190)
+                air_q_PM10_label.place(x=30, y=210)
             #PM25
                 air_q_PM25 = tk.StringVar()
                 if len(data.indexPM25) == 4:
-                    info = f"PoziomPM25: {data.indexPM25[2]} µg/m3 Ocena tekstowa: {data.indexPM25[3]}"
+                    info = f"PoziomPM25: {data.indexPM25[2]} µg/m3 Ocena tekstowa: {data.indexPM25[3]} Godzina: {data.indexPM25[1][12:16]}"
                 else:
                     info = "PoziomPM25: Ta stacja nie mierzy tej właściwości!"
                 air_q_PM25.set(info)
                 global air_q_PM25_label
                 air_q_PM25_label = tkinter.Label(self.root, textvariable=air_q_PM25, font=("Arial", font_size))
                 air_q_PM25_label.pack()
-                air_q_PM25_label.place(x=60, y=210)
+                air_q_PM25_label.place(x=30, y=230)
             #CO
                 air_q_CO = tk.StringVar()
                 if len(data.indexCO) == 4:
-                    info = f"PoziomCO: {data.indexCO[2]} µg/m3 Ocena tekstowa: {data.indexCO[3]}"
+                    info = f"PoziomCO: {data.indexCO[2]} µg/m3 Ocena tekstowa: {data.indexCO[3]} Godzina: {data.indexCO[1][12:16]}"
                 else:
                     info = "PoziomCO: Ta stacja nie mierzy tej właściwości!"
                 air_q_CO.set(info)
                 global air_q_CO_label
                 air_q_CO_label = tkinter.Label(self.root, textvariable=air_q_CO, font=("Arial", font_size))
                 air_q_CO_label.pack()
-                air_q_CO_label.place(x=60, y=230)
+                air_q_CO_label.place(x=30, y=250)
             #C6H6
                 air_q_C6H6 = tk.StringVar()
                 if len(data.indexC6H6) == 4:
-                    info = f"PoziomC6H6: {data.indexC6H6[2]} µg/m3 Ocena tekstowa: {data.indexC6H6[3]}"
+                    info = f"PoziomC6H6: {data.indexC6H6[2]} µg/m3 Ocena tekstowa: {data.indexC6H6[3]} Godzina: {data.indexC6H6[1][12:16]}"
                 else:
                     info = "PoziomCO: Ta stacja nie mierzy tej właściwości!"
                 air_q_C6H6.set(info)
                 global air_q_C6H6_label
                 air_q_C6H6_label = tkinter.Label(self.root, textvariable=air_q_C6H6, font=("Arial", font_size))
                 air_q_C6H6_label.pack()
-                air_q_C6H6_label.place(x=60, y=250)
+                air_q_C6H6_label.place(x=30, y=270)
             #O3
                 air_q_O3 = tk.StringVar()
                 if len(data.indexO3) == 4:
-                    info = f"PoziomO3: {data.indexO3[2]} µg/m3 Ocena tekstowa: {data.indexO3[3]}"
+                    info = f"PoziomO3: {data.indexO3[2]} µg/m3 Ocena tekstowa: {data.indexO3[3]} Godzina: {data.indexO3[1][12:16]}"
                 else:
                     info = "PoziomCO: Ta stacja nie mierzy tej właściwości!"
                 air_q_O3.set(info)
                 global air_q_O3_label
                 air_q_O3_label = tkinter.Label(self.root, textvariable=air_q_O3, font=("Arial", font_size))
                 air_q_O3_label.pack()
-                air_q_O3_label.place(x=60, y=270)
+                air_q_O3_label.place(x=30, y=290)
 
 
 
