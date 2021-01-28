@@ -151,38 +151,38 @@ class getDataFromAPI(object):
                     try:
                         indexSO2.append(jsonData2['so2IndexLevel']['indexLevelName'])
                     except TypeError:
-                        indexSO2.append("Błąd pobierania danych z API")
+                        indexSO2.append("?")
                 if i == 1:
                     indexNO2.append(date)
                     indexNO2.append(value)
                     try:
                         indexNO2.append(jsonData2['no2IndexLevel']['indexLevelName'])
                     except TypeError:
-                        indexNO2.append("Błąd pobierania danych z API")
+                        indexNO2.append("?")
                 if i == 2:
                     indexPM10.append(date)
                     indexPM10.append(value)
                     try:
                         indexPM10.append(jsonData2['pm10IndexLevel']['indexLevelName'])
                     except TypeError:
-                        indexPM10.append("Błąd pobierania danych z API")
+                        indexPM10.append("?")
                 if i == 3:
                     indexPM25.append(date)
                     indexPM25.append(value)
                     try:
                         indexPM25.append(jsonData2['pm25IndexLevel']['indexLevelName'])
                     except TypeError:
-                        indexPM25.append("Błąd pobierania danych z API")
+                        indexPM25.append("?")
                 if i == 4:
                     indexCO.append(date)
                     try:
-                        indexCO.append(value / 1000)
+                        indexCO.append(value/1000)
                     except TypeError:
                         indexCO.append('None')
                     try:
                         indexCO.append(jsonData2['coIndexLevel']['indexLevelName'])
                     except TypeError:
-                        indexCO.append("Błąd pobierania danych z API")
+                        indexCO.append("?")
 
                 if i == 5:
                     indexC6H6.append(date)
@@ -190,14 +190,14 @@ class getDataFromAPI(object):
                     try:
                         indexC6H6.append(jsonData2['c6h6IndexLevel']['indexLevelName'])
                     except TypeError:
-                        indexC6H6.append("Błąd pobierania danych z API")
+                        indexC6H6.append("?")
                 if i == 6:
                     indexO3.append(date)
                     indexO3.append(value)
                     try:
                         indexO3.append(jsonData2['o3IndexLevel']['indexLevelName'])
                     except TypeError:
-                        indexO3.append("Błąd pobierania danych z API")
+                        indexO3.append("?")
 
         stationProperties = StationProperties(stationId, indexMain, indexSO2, indexNO2, indexPM10, indexPM25, indexCO,
                                               indexC6H6,
@@ -205,20 +205,20 @@ class getDataFromAPI(object):
         return stationProperties
 
 
-# def testowanie():
-#     o = getDataFromAPI()
-#     lista = o.getStationData()
-#     for i in lista:
-#         print("Id =", i.id, "Nazwa =", i.name)
-#         p = o.getStationProperties(i.id)
-#         print("\t", "Indeks jakości powietrza:", p.indexMain)
-#         print("\t\t", "SO2", p.indexSO2)
-#         print("\t\t", "NO2", p.indexNO2)
-#         print("\t\t", "PM10", p.indexPM10)
-#         print("\t\t", "PM25", p.indexPM25)
-#         print("\t\t", "CO", p.indexCO)
-#         print("\t\t", "C6H6", p.indexC6H6)
-#         print("\t\t", "O3", p.indexO3)
+def testowanie():
+    o = getDataFromAPI()
+    lista = o.getStationData()
+    for i in lista:
+        print("Id =", i.id, "Nazwa =", i.name)
+        p = o.getStationProperties(i.id)
+        print("\t", "Indeks jakości powietrza:", p.indexMain)
+        print("\t\t", "SO2", p.indexSO2)
+        print("\t\t", "NO2", p.indexNO2)
+        print("\t\t", "PM10", p.indexPM10)
+        print("\t\t", "PM25", p.indexPM25)
+        print("\t\t", "CO", p.indexCO)
+        print("\t\t", "C6H6", p.indexC6H6)
+        print("\t\t", "O3", p.indexO3)
 
 
-#testowanie()
+testowanie()
