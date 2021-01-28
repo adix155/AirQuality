@@ -1,10 +1,11 @@
 from data import *
 import tkinter as tk
 import tkinter.ttk
+import requests
+from sys import exit
 
 class Aplication(object):
-    global places
-    places = getDataFromAPI
+
     def __init__(self):
         self.root = tk.Tk()
         self.root.geometry('500x180')
@@ -28,15 +29,27 @@ class Aplication(object):
 
 
     def get_stations(self):
-        station_names=()
-        places_list=places.getStationData(self)
-        for i in places_list:
-            station_names +=  i.name,
-        return places_list,station_names
+        global places
+        try:
+            places = getDataFromAPI
+            places_list=places.getStationData(self)
+            station_names = ()
+        except requests.exceptions.ConnectionError:
+            check_connection = tk.StringVar()
+            check_connection.set("Połącz się z internetem i zrestartuj program")
+            check_connection_label = tkinter.Label(self.root, textvariable=check_connection, font=("Arial", 15))
+            check_connection_label.pack()
+            check_connection_label.place(x=60, y=100)
+            self.root.protocol('WM_DELETE_WINDOW',exit)
+            self.run()
+
+
+        else:
+            for i in places_list:
+                station_names +=  i.name,
+            return places_list,station_names
     def destruct_labels(self):
-        # labels = (station_name_label, check_time_label, air_q_text_label, air_q_SO2_label, \
-        #           air_q_NO2_label, air_q_PM10_label, air_q_PM25_label, air_q_CO_label, \
-        #           air_q_C6H6_label, air_q_O3_label)
+
         if 'station_name_label' in globals():
             station_name_label.destroy()
             del globals()['station_name_label']
