@@ -208,7 +208,7 @@ class Aplication(object):
                         info = f"PoziomC6H6: {data.indexC6H6[2]} µg/m3 Ocena tekstowa: {data.indexC6H6[3]} Godzina: ?"
 
                 else:
-                    info = "PoziomCO: Ta stacja nie mierzy tej właściwości!"
+                    info = "PoziomC6H6: Ta stacja nie mierzy tej właściwości!"
                 air_q_C6H6.set(info)
                 global air_q_C6H6_label
                 air_q_C6H6_label = tkinter.Label(self.root, textvariable=air_q_C6H6, font=("Arial", font_size))
@@ -222,7 +222,7 @@ class Aplication(object):
                     else:
                         info = f"PoziomO3: {data.indexO3[2]} µg/m3 Ocena tekstowa: {data.indexO3[3]} Godzina: ?"
                 else:
-                    info = "PoziomCO: Ta stacja nie mierzy tej właściwości!"
+                    info = "PoziomO3: Ta stacja nie mierzy tej właściwości!"
                 air_q_O3.set(info)
                 global air_q_O3_label
                 air_q_O3_label = tkinter.Label(self.root, textvariable=air_q_O3, font=("Arial", font_size))
