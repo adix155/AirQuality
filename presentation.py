@@ -99,7 +99,7 @@ class Aplication(object):
         for i in self.stations[0]:
             if station == i.name:
                 self.root.geometry('500x400')
-                data = places.getStationProperties(self, i.id)
+                data = places.getStationProperties(i.id)
                 self.destruct_labels()
 
                 station_name = tk.StringVar()
