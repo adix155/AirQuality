@@ -31,7 +31,7 @@ class Aplication(object):
         global places
         try:
             places = getDataFromAPI
-            places_list = places.getStationData(self)
+            places_list = places.getStationData()
             station_names = ()
         except requests.exceptions.ConnectionError:
             check_connection = tk.StringVar()

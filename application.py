@@ -1,8 +1,8 @@
-
 from data import getDataFromAPI
 import ipinfo
 import socket
 import requests
+
 
 def yourLocation():
     try:
@@ -17,28 +17,16 @@ def yourLocation():
     except:
         print("Serwer przeciążony")
 
-def getStationLocation(self):
-    places_list = getDataFromAPI.getStationData(self)
-    station_lat=()
-    station_lon=()
-    for i in places_list:
-        station_lat +=  i.lat,
-        station_lon += i.lon,
-    print(station_lat)
-    print(station_lon)
+
+class Test(object):
+
+    def getStationLocation():
+        places_list = getDataFromAPI.getStationData()
+        for i in places_list:
+            station_lat = i.lat
+            station_lon = i.lon
+            print(station_lat)
+            print(station_lon)
 
 
-def testowanie():
-    lista = getStationLocation()
-    for i in lista:
-        print(i.station_lat)
-        print(i.station_lon)
-#def stationDistance():
-
-    
-#yourLocation()
-#getStationLocation()
-
-    
-
-
+Test.getStationLocation()

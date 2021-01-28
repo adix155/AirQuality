@@ -59,7 +59,8 @@ class getDataFromAPI(object):
     metoda zwracająca listę obiektów typu Station
     """
 
-    def getStationData(self):
+    @staticmethod
+    def getStationData():
         url = "http://api.gios.gov.pl/pjp-api/rest/station/findAll"
         response = requests.get(url)
         data = response.text
@@ -85,7 +86,8 @@ class getDataFromAPI(object):
         argument id: id danej stacji pomiarowej
     """
 
-    def getStationProperties(self, id):
+    @staticmethod
+    def getStationProperties(id):
         url = 'http://api.gios.gov.pl/pjp-api/rest/station/sensors/' + str(id)
         response = requests.get(url)
         data = response.text
