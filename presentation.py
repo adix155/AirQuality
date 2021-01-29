@@ -3,6 +3,8 @@ import tkinter as tk
 import tkinter.ttk
 import requests
 from sys import exit
+from application import theShortest
+from tkinter import messagebox
 
 
 class Aplication(object):
@@ -22,9 +24,9 @@ class Aplication(object):
         self.station_select.pack()
         self.station_select.place(x=60, y=60)
         self.stations = self.get_stations()
-        self.station_select['values'] = self.stations[1]
+        self.station_select['values'] = ("AUTOMATYCZNA LOKALIZACJA",)+self.stations[1]
         self.station_select.bind("<<ComboboxSelected>>", self.choice_function)
-
+        #self.station_select.current(0)
         # self.station_select.current()
 
     def get_stations(self):
@@ -96,6 +98,14 @@ class Aplication(object):
     def choice_function(self, event):
         font_size = 10
         station = self.station_select.get()
+        if station =="AUTOMATYCZNA LOKALIZACJA":
+            try:
+                index=theShortest()
+            except:
+                messagebox.showinfo("Cierpliwości","Serwer chwilowo przeciążony!\nZrestartuj program i spróbuj za chwilę,\n"\
+                                                   "lub skorzystaj z ręcznego wyboru stacji")
+                return
+            station=self.stations[0][index].name
         for i in self.stations[0]:
             if station == i.name:
                 self.root.geometry('500x400')
