@@ -19,15 +19,12 @@ class Aplication(object):
                                                    " w której chcesz sprawdzić jakość powietrza ", \
                                    font=('Arial', 15))
         self.main_label.pack(side=tk.TOP)
-        # self.confirm=tk.Button(self.root, text="Zatwierdź",command=)
         self.station_select = tk.ttk.Combobox(self.root, width=60, height=5, state='readonly')
         self.station_select.pack()
         self.station_select.place(x=60, y=60)
         self.stations = self.get_stations()
         self.station_select['values'] = ("AUTOMATYCZNA LOKALIZACJA",)+self.stations[1]
         self.station_select.bind("<<ComboboxSelected>>", self.choice_function)
-        #self.station_select.current(0)
-        # self.station_select.current()
 
     def get_stations(self):
         global places
